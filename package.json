@@ -1,0 +1,20 @@
+{
+  "name": "pragen",
+  "version": "1.0.0",
+  "description": "Node.js (Express) clone of the PRAQEN login page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "praqen",
+    "login",
+    "express",
+    "clone"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

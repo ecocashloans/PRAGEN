@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover"/>
+    <title>Sign In to PRAQEN | Global P2P Bitcoin &amp; USDT Trading</title>
+    <meta name="description" content="Sign in to your PRAQEN account to buy and sell Bitcoin & USDT, trade gift cards, and manage your P2P trades worldwide."/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta name="author" content="PRAQEN"/>
+    <link rel="canonical" href="https://praqen.com/login"/>
+    <meta name="theme-color" content="#1B4332"/>
+    <meta name="msapplication-TileColor" content="#1B4332"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="/logo192.png"/>
+    <link rel="manifest" href="/manifest.json"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="PRAQEN"/>
+    <meta property="og:url" content="https://praqen.com/login"/>
+    <meta property="og:title" content="Sign In — PRAQEN"/>
+    <meta property="og:description" content="Access your PRAQEN account and continue trading Bitcoin & USDT P2P worldwide."/>
+    <meta property="og:image" content="/og-image.png"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@praqen"/>
+    <meta name="twitter:title" content="Sign In — PRAQEN"/>
+    <meta name="twitter:description" content="Access your PRAQEN account and continue trading Bitcoin & USDT P2P worldwide."/>
+    <meta name="twitter:image" content="/og-image.png"/>
+    <style>
+        #praqen-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, #1b4332 0, #0c2418 50%, #2d6a4f 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity .45s ease-out
+        }
+        #praqen-loader .logo-box {
+            width: 84px;
+            height: 84px;
+            background: #f4a422;
+            border-radius: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: 900;
+            color: #1b4332;
+            font-family: Georgia, serif;
+            margin-bottom: 18px;
+            animation: prq-pulse 1.6s ease-in-out infinite;
+            box-shadow: 0 0 40px rgba(244, 164, 34, .4)
+        }
+        #praqen-loader .logo-name {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            font-family: Georgia, serif;
+            margin-bottom: 6px
+        }
+        #praqen-loader .logo-sub {
+            color: rgba(255, 255, 255, .45);
+            font-size: 11px;
+            letter-spacing: 1px;
+            font-family: Arial, sans-serif;
+            margin-bottom: 28px
+        }
+        #praqen-loader .bar-track {
+            width: 48px;
+            height: 3px;
+            background: rgba(255, 255, 255, .15);
+            border-radius: 99px;
+            overflow: hidden
+        }
+        #praqen-loader .bar-fill {
+            height: 100%;
+            background: #f4a422;
+            border-radius: 99px;
+            animation: prq-slide 1.3s ease-in-out infinite
+        }
+        @keyframes prq-pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(244, 164, 34, .35)
+            }
+            50% {
+                transform: scale(1.06);
+                box-shadow: 0 0 50px rgba(244, 164, 34, .55)
+            }
+        }
+        @keyframes prq-slide {
+            0% {
+                width: 0%;
+                margin-left: 0
+            }
+            50% {
+                width: 60%;
+                margin-left: 20%
+            }
+            100% {
+                width: 0%;
+                margin-left: 100%
+            }
+        }
+    </style>
+    <link href="/static/css/main.e6641301.css" rel="stylesheet"/>
+    <script defer="defer" src="/static/js/main.b86cab4f.js"></script>
+</head>
+<body>
+<noscript>
+    <div style="font-family:Arial,sans-serif;max-width:900px;margin:0 auto;padding:32px 24px;color:#1b4332">
+        <h1>Sign In to PRAQEN</h1>
+        <p>Access your PRAQEN account to continue trading Bitcoin &amp; USDT peer-to-peer, manage your wallet, and track your trades.</p>
+        <p><a href="https://praqen.com/register">Create a free account</a> or <a href="https://praqen.com/login">log in</a> to start trading.</p>
+    </div>
+</noscript>
+<div id="root"></div>
+<div id="praqen-loader" aria-hidden="true">
+    <div class="logo-box">P</div>
+    <p class="logo-name">PRAQEN</p>
+    <p class="logo-sub">P2P BITCOIN TRADING</p>
+    <div class="bar-track"><div class="bar-fill"></div></div>
+</div>
+<script>
+    !function () {
+        function e() {
+            var e = document.getElementById("praqen-loader");
+            e && (e.style.opacity = "0", e.style.pointerEvents = "none", setTimeout(function () {
+                e.style.display = "none"
+            }, 460))
+        }
+
+        var n = new MutationObserver(function () {
+            var o = document.getElementById("root");
+            o && o.children.length > 0 && (n.disconnect(), setTimeout(e, 300))
+        });
+        n.observe(document.getElementById("root"), {childList: !0});
+        setTimeout(e, 3e3)
+    }()
+</script>
+</body>
+</html>

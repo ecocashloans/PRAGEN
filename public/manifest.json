@@ -1,0 +1,38 @@
+{
+  "short_name": "PRAQEN",
+  "name": "PRAQEN — Global P2P Bitcoin Trading",
+  "description": "The world's most trusted peer-to-peer Bitcoin and gift card trading platform.",
+  "icons": [
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "logo192-maskable.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "logo512-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#1B4332",
+  "background_color": "#1B4332",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "business"],
+  "lang": "en"
+}
